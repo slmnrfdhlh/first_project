@@ -1,43 +1,33 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import { createStackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation'; 
+
+
 import Judul from './Component/Judul';
+import Login from './Component/Login';
 
-const instructions = Platform.select({});
+const AppNavigator = createStackNavigator ({
+       Login : Login,
+       Judul : Judul,
+})
 
-type Props = {};
+
 export default class App extends Component<Props> {
   render() {
     return (
 
+      <AppNavigator/>
 
-
-      <View style={styles.container}>
-      <Judul title="BIODATA"/>
-      <Judul title="LOGIN"/>
-          <Text>Halloooooo<Text/>
-          <Text>Nama Siswa : Salmaa</Text>>
-          <Text>Kelas : XI RPL 3</Text>
-          <Text>No : 35</Text>          
-      </View>
     );
   }
-}
+} 
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1,   
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f6de6c',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-}); 
+    backgroundColor: '#f34949',
+  },  
+ });
